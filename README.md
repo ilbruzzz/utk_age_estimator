@@ -10,7 +10,7 @@ Progetto di Deep Learning per la stima dell'età anagrafica a partire da immagin
 ├── esame_finale_dl.ipynb       # Notebook principale: training della CNN
 ├── test_rete.ipynb             # Notebook di test: confronto tra modelli addestrati
 ├── requirements.txt            # Dipendenze Python
-├── assets/
+├── asset/
 │   └── epoch_loss.png          # Screenshot log TensorBoard
 ├── modelli/                    # Modelli addestrati (.keras / .h5)
 │   ├── shape_64x64.keras
@@ -124,7 +124,13 @@ batch_size = 32
 
 ## Monitoraggio con TensorBoard
 
-![Epoch Loss](assets/epoch_loss.png)
+![Epoch Loss](asset/epoch_loss.png)
+
+**Epoch Loss** — andamento della MSE su train e validation per ogni run.
+
+![Epoch MAE](asset/mae.png)
+
+**Epoch MAE** — confronto tra tutte le run: `secondo_test_shape_64x64` raggiunge la MAE di validation più bassa (~7.6 anni), mentre `test_200x200_gpu` si stabilizza intorno ai 9 anni nonostante più epoche di training.
 
 Per avviare TensorBoard in locale:
 
