@@ -164,3 +164,15 @@ L'output è una griglia matplotlib con immagine e predizione in anni per ciascun
 ## Metriche
 
 Il modello ottimizza la **Mean Squared Error (MSE)** come loss e monitora la **Mean Absolute Error (MAE)** come metrica interpretabile (errore medio in anni sull'età predetta).
+
+---
+
+## Esempio di Output
+
+> **Nota importante:** Le predizioni mostrate di seguito sono puramente indicative e **non costituiscono un risultato attendibile**. Il modello è stato addestrato con potenza di calcolo limitata e su un dataset relativamente scarso per un task di questo tipo, il che non permette di ottenere risultati veramente accurati. Le prestazioni variano significativamente da foto a foto — in base all'illuminazione, angolazione, qualità dell'immagine e caratteristiche del soggetto. A seconda dell'input, il modello potrebbe restituire stime dell'età **anche completamente errate**.
+
+Di seguito un esempio di confronto tra i quattro modelli addestrati su una stessa immagine (soggetto reale: 20 anni):
+
+![Esempio di output — confronto tra modelli](asset/output.png)
+
+I modelli a risoluzione 64×64 e 100×100 stimano rispettivamente 25.4, 24.7 e 25.4 anni, mentre il modello `shape_200x200.h5` si discosta maggiormente con una predizione di 33.7 anni. Considerando che il soggetto ha 20 anni, l'errore va da circa 5 fino a quasi 14 anni — un range che conferma come i risultati siano fortemente influenzati dall'immagine di input e non debbano essere considerati affidabili.
