@@ -10,15 +10,24 @@ Progetto di Deep Learning per la stima dell'età anagrafica a partire da immagin
 ├── esame_finale_dl.ipynb       # Notebook principale: training della CNN
 ├── test_rete.ipynb             # Notebook di test: confronto tra modelli addestrati
 ├── requirements.txt            # Dipendenze Python
-├── dataset/
-│   └── UTKFace/                # Dataset scaricato via kagglehub
-├── input/                      # Immagini di test personalizzate (es. sara2.jpeg)
-├── modelli/                    # Modelli .keras / .h5 salvati
-└── keras/
+├── assets/
+│   └── epoch_loss.png          # Screenshot log TensorBoard
+├── modelli/                    # Modelli addestrati (.keras / .h5)
+│   ├── shape_64x64.keras
+│   ├── shape_100x100.keras
+│   ├── shape_64x64_con_droput_aggiornati_e_GlobalAveragePooling2D.keras
+│   └── shape_200x200.h5
+├── input/                      # Crea questa cartella e inserisci le immagini da testare
+│   └── tua_foto.jpg
+├── dataset/                    # Generata automaticamente da kagglehub (non in repo)
+│   └── UTKFace/
+└── keras/                      # Generata durante il training (non in repo)
     ├── logs/                   # Log TensorBoard
     ├── trainining.log          # Log CSV dell'addestramento
     └── checkpoint-*.keras      # Checkpoint per epoca
 ```
+
+> La cartella `input/` non è inclusa nella repo: creala manualmente nella root del progetto e inserisci le immagini `.jpg` o `.jpeg` che vuoi usare per testare la rete. Aggiorna il campo `nome_foto` in `test_rete.ipynb` con il nome del file scelto.
 
 ---
 
@@ -129,7 +138,7 @@ I log di ogni esperimento sono salvati in sottocartelle separate, così da poter
 
 ## Test dei Modelli
 
-Il notebook `test_rete.ipynb` permette di confrontare le predizioni di più modelli su una stessa immagine.
+Il notebook `test_rete.ipynb` permette di confrontare le predizioni di tutti i modelli su una stessa immagine.
 
 **Modelli confrontati:**
 
